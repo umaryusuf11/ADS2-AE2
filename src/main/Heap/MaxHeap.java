@@ -1,4 +1,4 @@
-package main;
+package main.Heap;
 
 public class MaxHeap extends Heap{
     public MaxHeap(int[] arr){

@@ -1,4 +1,4 @@
-package main;
+package main.Heap;
 
 import java.util.Arrays;
 
@@ -42,6 +42,6 @@ public abstract class Heap {
     }
 
     public String toString() {
-        return "main.Heap:" + A.length + " " + Arrays.toString(A);
+        return "main.Heap.Heap:" + A.length + " " + Arrays.toString(A);
     }
 }
