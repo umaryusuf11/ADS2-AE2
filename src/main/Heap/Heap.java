@@ -4,6 +4,11 @@ import java.util.Arrays;
 
 public abstract class Heap {
     int[] A;
+    public int size = 0;
+
+    public int capacity(){
+        return A.length;
+    }
 
     public int left(int i){
         return (i * 2) + 1;
@@ -26,11 +31,16 @@ public abstract class Heap {
         heapify((n / 2) - 1, n);
     }
 
-    protected void buildHeap(){
+    public void buildHeap(){
         int n = A.length;
         for (int i = (n/2) - 1; i >= 0 ; i--) {
             heapify(i, n);
         }
+    }
+
+    public void set(int index, int x){
+        A[index] = x;
+        heapify((index / 2) -1, index);
     }
 
     public int get(int i){
