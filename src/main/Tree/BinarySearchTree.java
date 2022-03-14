@@ -10,6 +10,21 @@ public class BinarySearchTree {
         root = null;
     }
 
+    public void transplant(Node u, Node v){
+        if (u.parent == null){
+            root = v;
+        }
+        else if (u == u.parent.left){
+            u.parent.left = v;
+        }
+        else {
+            u.parent.right = v;
+        }
+        if (v != null){
+            v.parent = u.parent;
+        }
+    }
+
     public void insert(int value) {
         insert(root, value);
         size++;
@@ -18,6 +33,7 @@ public class BinarySearchTree {
     private void insert(Node node, int value){
         if (root == null){
             root = new Node(value);
+            root.successor = successor(root);
             smallestNode = root;
             return;
         }
@@ -25,6 +41,7 @@ public class BinarySearchTree {
             if(node.left == null){
                 Node newNode = new Node(value, node);
                 node.left = newNode;
+                recalculateSuccessors(newNode);
 
                 // check if new node is the smallest node, if so, update smallest node
                 if (newNode.key < smallestNode.key){
@@ -38,11 +55,27 @@ public class BinarySearchTree {
         else {
             if (node.right == null){
                 node.right = new Node(value, node);
+                recalculateSuccessors(node.right);
                 return;
             }
             insert(node.right, value);
             return;
         }
+    }
+
+    /**
+     * Recalculates the successor of a given node and all of its parents up to the root
+     * @param node - the start node of the operation
+     */
+    private void recalculateSuccessors(Node node){
+        if (node.parent == null){
+            node.successor = successor(node);
+            return;
+        }
+
+        node.successor = successor(node);
+
+        recalculateSuccessors(node.parent);
     }
 
     public int min(){
@@ -54,7 +87,8 @@ public class BinarySearchTree {
             throw new IndexOutOfBoundsException("Tree is empty");
         }
         int min = smallestNode.key;
-        smallestNode = successor(smallestNode);
+        transplant(smallestNode, smallestNode.right);
+        smallestNode = smallestNode.successor;
         size--;
         return min;
     }
@@ -78,51 +112,22 @@ public class BinarySearchTree {
         return parent;
     }
 
-
-    private int left(int i){
-        return (i * 2) + 1;
-    }
-
-    private int right(int i){
-        return (i * 2) + 2;
-    }
-
-    public int[] toArray(){
-        // convert binary tree to array
-        int[] array = new int[100];
-        int index = 0;
-        Node node = root;
-        while (node != null){
-            array[index] = node.key;
-            index = left(index);
-            node = node.left;
-        }
-
-        index = 2;
-        node = root;
-        while (node != null){
-            array[index] = node.key;
-            index = right(index);
-            node = node.right;
-        }
-
-        return array;
-
-    }
-
     private class Node {
         int key;
         Node left;
         Node right;
         Node parent;
+        Node successor;
 
         private Node(int value) {
             this.key = value;
+            this.successor = successor(this);
         }
 
         private Node(int value, Node parent){
             this.key = value;
             this.parent = parent;
+            this.successor = successor(this);
         }
     }
 }

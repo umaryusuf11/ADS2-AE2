@@ -60,20 +60,35 @@ public class Main {
         binarySearchTree.insert(7);
         binarySearchTree.insert(13);
 
-        System.out.println(Arrays.toString(binarySearchTree.toArray()));
+//        System.out.println(Arrays.toString(binarySearchTree.toArray()));
 
-        System.out.println(binarySearchTree.extractMin());
-        System.out.println(binarySearchTree.extractMin());
-        System.out.println(binarySearchTree.extractMin());
-        System.out.println(binarySearchTree.extractMin());
-        System.out.println(binarySearchTree.extractMin());
-        System.out.println(binarySearchTree.extractMin());
-        System.out.println(binarySearchTree.extractMin());
-        System.out.println(binarySearchTree.extractMin());
-        System.out.println(binarySearchTree.extractMin());
+        int a = binarySearchTree.extractMin();
+        System.out.println(a);
+        int b = binarySearchTree.extractMin();
+        System.out.println(b);
+        int c = binarySearchTree.extractMin();
+        System.out.println(c);
+        int d = binarySearchTree.extractMin();
+        System.out.println(d);
+        int e = binarySearchTree.extractMin();
+        System.out.println(e);
+        int f = binarySearchTree.extractMin();
+        System.out.println(f);
+        int g = binarySearchTree.extractMin();
+        System.out.println(g);
+        int h = binarySearchTree.extractMin();
+        System.out.println(h);
+        int i = binarySearchTree.extractMin();
+        System.out.println(i);
+//        int j = binarySearchTree.extractMin();
+//        System.out.println(j);
+
+        binarySearchTree.insert(5);
+        int j = binarySearchTree.extractMin();
+        System.out.println(j);
 
 
-        System.out.println(Arrays.toString(binarySearchTree.toArray()));
+//        System.out.println(Arrays.toString(binarySearchTree.toArray()));
 
     }
 }
