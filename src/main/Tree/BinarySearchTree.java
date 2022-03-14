@@ -1,8 +1,6 @@
 package main.Tree;
 
 public class BinarySearchTree {
-// Implement the Binary Search Tree data structure including the following operations: search, min,
-// max, insert, and delete
 
     private Node root;
     private int size = 0;
