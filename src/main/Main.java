@@ -1,12 +1,7 @@
 package main;
 
-import main.Heap.MinHeap;
-import main.Queue.MinPriorityQueue;
-import main.Queue.MinPriorityQueueHeap;
+import main.Queue.MinPriorityQueueBST;
 import main.Ropes.Ropes;
-import main.Tree.BinarySearchTree;
-
-import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -50,42 +45,44 @@ public class Main {
 //        System.out.println(minPriorityQueueHeap);
 //        System.out.println(minPriorityQueueHeap.extractMin());
 
-        BinarySearchTree binarySearchTree = new BinarySearchTree();
-        binarySearchTree.insert(8);
-        binarySearchTree.insert(3);
-        binarySearchTree.insert(10);
-        binarySearchTree.insert(1);
-        binarySearchTree.insert(6);
-        binarySearchTree.insert(14);
-        binarySearchTree.insert(4);
-        binarySearchTree.insert(7);
-        binarySearchTree.insert(13);
+        MinPriorityQueueBST minPriorityQueueEfficientBST = new MinPriorityQueueBST();
+        minPriorityQueueEfficientBST.insert(8);
+        minPriorityQueueEfficientBST.insert(3);
+        minPriorityQueueEfficientBST.insert(10);
+        minPriorityQueueEfficientBST.insert(1);
+        minPriorityQueueEfficientBST.insert(6);
+        minPriorityQueueEfficientBST.insert(14);
+        minPriorityQueueEfficientBST.insert(4);
+        minPriorityQueueEfficientBST.insert(7);
+        minPriorityQueueEfficientBST.insert(13);
 
-//        System.out.println(Arrays.toString(binarySearchTree.toArray()));
+//        System.out.println(Arrays.toString(minPriorityQueueEfficientBST.toArray()));
 
-        int a = binarySearchTree.extractMin();
+        int a = minPriorityQueueEfficientBST.extractMin();
         System.out.println(a);
-        int b = binarySearchTree.extractMin();
+        int b = minPriorityQueueEfficientBST.extractMin();
         System.out.println(b);
-        int c = binarySearchTree.extractMin();
+        int c = minPriorityQueueEfficientBST.extractMin();
         System.out.println(c);
-        int d = binarySearchTree.extractMin();
+        int d = minPriorityQueueEfficientBST.extractMin();
         System.out.println(d);
-        int e = binarySearchTree.extractMin();
+        int e = minPriorityQueueEfficientBST.extractMin();
         System.out.println(e);
-        int f = binarySearchTree.extractMin();
+        int f = minPriorityQueueEfficientBST.extractMin();
         System.out.println(f);
-        int g = binarySearchTree.extractMin();
+        int g = minPriorityQueueEfficientBST.extractMin();
         System.out.println(g);
-        int h = binarySearchTree.extractMin();
+        int h = minPriorityQueueEfficientBST.extractMin();
         System.out.println(h);
-        int i = binarySearchTree.extractMin();
+        int i = minPriorityQueueEfficientBST.extractMin();
         System.out.println(i);
-//        int j = binarySearchTree.extractMin();
+//        int j = minPriorityQueueEfficientBST.extractMin();
 //        System.out.println(j);
 
-        binarySearchTree.insert(5);
-        int j = binarySearchTree.extractMin();
+        System.out.println(minPriorityQueueEfficientBST.min());
+
+        minPriorityQueueEfficientBST.insert(5);
+        int j = minPriorityQueueEfficientBST.extractMin();
         System.out.println(j);
 
         Ropes.optimalConnect(new int[] {4, 8, 3, 1, 6, 9, 12, 7, 2});

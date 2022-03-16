@@ -1,12 +1,12 @@
-package main.Tree;
+package main.Queue;
 
-public class BinarySearchTree {
+public class MinPriorityQueueEfficientBST {
 
     private Node root;
     private int size = 0;
     private Node smallestNode;
 
-    public BinarySearchTree() {
+    public MinPriorityQueueEfficientBST() {
         root = null;
     }
 
@@ -131,5 +131,3 @@ public class BinarySearchTree {
         }
     }
 }
-
-
