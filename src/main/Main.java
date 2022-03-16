@@ -3,6 +3,7 @@ package main;
 import main.Heap.MinHeap;
 import main.Queue.MinPriorityQueue;
 import main.Queue.MinPriorityQueueHeap;
+import main.Ropes.Ropes;
 import main.Tree.BinarySearchTree;
 
 import java.util.Arrays;
@@ -87,8 +88,6 @@ public class Main {
         int j = binarySearchTree.extractMin();
         System.out.println(j);
 
-
-//        System.out.println(Arrays.toString(binarySearchTree.toArray()));
-
+        Ropes.optimalConnect(new int[] {4, 8, 3, 1, 6, 9, 12, 7, 2});
     }
 }
