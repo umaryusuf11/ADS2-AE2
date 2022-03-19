@@ -1,51 +1,119 @@
 package main;
 
 import main.Queue.MinPriorityQueueBST;
+import main.Queue.MinPriorityQueueEfficientBST;
+import main.Queue.MinPriorityQueueHeap;
 import main.Ropes.Ropes;
 
 public class Main {
-    public static void main(String[] args) {
-//        int[] arr = { 4, 15, 1, 4, 2, 5, 3, 1, 8, 6, 10 };
-//
-//        MinHeap minHeap = new MinHeap(arr);
-//        System.out.println(minHeap);
-//
-//        MinPriorityQueue minPriorityQueue = new MinPriorityQueue(8);
-//        minPriorityQueue.insert(5);
-//        minPriorityQueue.insert(4);
-//        minPriorityQueue.insert(6);
-//        minPriorityQueue.insert(3);
-//        minPriorityQueue.build();
-//
-//        System.out.println(minPriorityQueue.extractMin());
 
-//        MinPriorityQueueHeap minPriorityQueueHeap = new MinPriorityQueueHeap(8);
-//        minPriorityQueueHeap.insert(5);
-//        minPriorityQueueHeap.insert(4);
-//        minPriorityQueueHeap.insert(6);
-//        minPriorityQueueHeap.insert(3);
-//        minPriorityQueueHeap.insert(1);
-//        minPriorityQueueHeap.insert(3);
-//        minPriorityQueueHeap.insert(2);
-//        minPriorityQueueHeap.insert(1);
-//        minPriorityQueueHeap.insert(-3);
-//
-//        System.out.println(minPriorityQueueHeap);
-//        System.out.println(minPriorityQueueHeap.extractMin());
-//
-//        System.out.println(minPriorityQueueHeap);
-//        System.out.println(minPriorityQueueHeap.extractMin());
-//
-//        System.out.println(minPriorityQueueHeap);
-//        System.out.println(minPriorityQueueHeap.extractMin());
-//
-//        System.out.println(minPriorityQueueHeap);
-//        System.out.println(minPriorityQueueHeap.extractMin());
-//
-//        System.out.println(minPriorityQueueHeap);
-//        System.out.println(minPriorityQueueHeap.extractMin());
+    public static void exampleMinHeapQueue(){
+        System.out.println("Example of Min Heap Queue");
+        MinPriorityQueueHeap minPriorityQueueHeap = new MinPriorityQueueHeap();
+        minPriorityQueueHeap.insert(5);
+        minPriorityQueueHeap.insert(4);
+        minPriorityQueueHeap.insert(6);
+        minPriorityQueueHeap.insert(3);
+        minPriorityQueueHeap.insert(1);
+        minPriorityQueueHeap.insert(3);
+        minPriorityQueueHeap.insert(2);
+        minPriorityQueueHeap.insert(1);
+        minPriorityQueueHeap.insert(-3);
 
-        MinPriorityQueueBST minPriorityQueueEfficientBST = new MinPriorityQueueBST();
+        System.out.println("Initial Queue: " + minPriorityQueueHeap);
+        System.out.println(minPriorityQueueHeap.extractMin());
+
+        System.out.println(minPriorityQueueHeap.extractMin());
+
+        System.out.println(minPriorityQueueHeap.extractMin());
+
+        System.out.println(minPriorityQueueHeap.extractMin());
+
+        System.out.println(minPriorityQueueHeap.extractMin());
+
+        System.out.println(minPriorityQueueHeap.extractMin());
+
+        System.out.println(minPriorityQueueHeap.extractMin());
+
+        System.out.println(minPriorityQueueHeap.extractMin());
+
+        System.out.println(minPriorityQueueHeap.extractMin());
+
+        System.out.println("--------------------------------");
+        System.out.println();
+    }
+
+    public static void exampleMinHeapQueueWithInitialCapacity() {
+        System.out.println("Example of Min Heap Queue With Inintial Capacity");
+        MinPriorityQueueHeap minPriorityQueueHeap = new MinPriorityQueueHeap(8);
+        minPriorityQueueHeap.insert(5);
+        minPriorityQueueHeap.insert(4);
+        minPriorityQueueHeap.insert(6);
+        minPriorityQueueHeap.insert(3);
+        minPriorityQueueHeap.insert(1);
+        minPriorityQueueHeap.insert(3);
+        minPriorityQueueHeap.insert(2);
+        minPriorityQueueHeap.insert(1);
+        minPriorityQueueHeap.insert(-3);
+
+        System.out.println("Initial Queue: " + minPriorityQueueHeap);
+        System.out.println(minPriorityQueueHeap.extractMin());
+
+        System.out.println(minPriorityQueueHeap.extractMin());
+
+        System.out.println(minPriorityQueueHeap.extractMin());
+
+        System.out.println(minPriorityQueueHeap.extractMin());
+
+        System.out.println(minPriorityQueueHeap.extractMin());
+
+        System.out.println(minPriorityQueueHeap.extractMin());
+
+        System.out.println(minPriorityQueueHeap.extractMin());
+
+        System.out.println(minPriorityQueueHeap.extractMin());
+
+        System.out.println(minPriorityQueueHeap.extractMin());
+
+
+        System.out.println("--------------------------------");
+        System.out.println();
+    }
+
+    public static void exampleMinBinarySearchTreeQueue() {
+        System.out.println("Example of Min Binary Search Tree Queue");
+        MinPriorityQueueBST minPriorityQueueBST = new MinPriorityQueueBST();
+        minPriorityQueueBST.insert(8);
+        minPriorityQueueBST.insert(3);
+        minPriorityQueueBST.insert(10);
+        minPriorityQueueBST.insert(1);
+        minPriorityQueueBST.insert(6);
+        minPriorityQueueBST.insert(14);
+        minPriorityQueueBST.insert(4);
+        minPriorityQueueBST.insert(7);
+        minPriorityQueueBST.insert(13);
+
+        System.out.println("Initial Queue: [ 8, 3, 10, 1, 6, 14, 4, 7, 13 ]");
+
+        System.out.println(minPriorityQueueBST.extractMin());
+        System.out.println(minPriorityQueueBST.extractMin());
+        System.out.println(minPriorityQueueBST.extractMin());
+        System.out.println(minPriorityQueueBST.extractMin());
+        System.out.println(minPriorityQueueBST.extractMin());
+        System.out.println(minPriorityQueueBST.extractMin());
+        System.out.println(minPriorityQueueBST.extractMin());
+        System.out.println(minPriorityQueueBST.extractMin());
+        System.out.println(minPriorityQueueBST.extractMin());
+
+        System.out.println("--------------------------------");
+        System.out.println();
+
+
+    }
+
+    public static void exampleMinBinarySearchTreeEfficientQueue() {
+        System.out.println("Example of Min Binary Search Tree With O(1) Min and Extract-Min Queue");
+        MinPriorityQueueEfficientBST minPriorityQueueEfficientBST = new MinPriorityQueueEfficientBST();
         minPriorityQueueEfficientBST.insert(8);
         minPriorityQueueEfficientBST.insert(3);
         minPriorityQueueEfficientBST.insert(10);
@@ -56,35 +124,37 @@ public class Main {
         minPriorityQueueEfficientBST.insert(7);
         minPriorityQueueEfficientBST.insert(13);
 
-//        System.out.println(Arrays.toString(minPriorityQueueEfficientBST.toArray()));
+        System.out.println("Initial Queue: [ 8, 3, 10, 1, 6, 14, 4, 7, 13 ]");
+        System.out.println(minPriorityQueueEfficientBST.extractMin());
+        System.out.println(minPriorityQueueEfficientBST.extractMin());
+        System.out.println(minPriorityQueueEfficientBST.extractMin());
+        System.out.println(minPriorityQueueEfficientBST.extractMin());
+        System.out.println(minPriorityQueueEfficientBST.extractMin());
+        System.out.println(minPriorityQueueEfficientBST.extractMin());
+        System.out.println(minPriorityQueueEfficientBST.extractMin());
+        System.out.println(minPriorityQueueEfficientBST.extractMin());
+        System.out.println(minPriorityQueueEfficientBST.extractMin());
 
-        int a = minPriorityQueueEfficientBST.extractMin();
-        System.out.println(a);
-        int b = minPriorityQueueEfficientBST.extractMin();
-        System.out.println(b);
-        int c = minPriorityQueueEfficientBST.extractMin();
-        System.out.println(c);
-        int d = minPriorityQueueEfficientBST.extractMin();
-        System.out.println(d);
-        int e = minPriorityQueueEfficientBST.extractMin();
-        System.out.println(e);
-        int f = minPriorityQueueEfficientBST.extractMin();
-        System.out.println(f);
-        int g = minPriorityQueueEfficientBST.extractMin();
-        System.out.println(g);
-        int h = minPriorityQueueEfficientBST.extractMin();
-        System.out.println(h);
-        int i = minPriorityQueueEfficientBST.extractMin();
-        System.out.println(i);
-//        int j = minPriorityQueueEfficientBST.extractMin();
-//        System.out.println(j);
+        System.out.println("--------------------------------");
+        System.out.println();
+    }
 
-        System.out.println(minPriorityQueueEfficientBST.min());
-
-        minPriorityQueueEfficientBST.insert(5);
-        int j = minPriorityQueueEfficientBST.extractMin();
-        System.out.println(j);
-
+    public static void exampleRopes() {
         Ropes.optimalConnect(new int[] {4, 8, 3, 1, 6, 9, 12, 7, 2});
+    }
+
+    public static void main(String[] args) {
+        // Part 1
+
+        // a
+        exampleMinHeapQueue();
+        exampleMinHeapQueueWithInitialCapacity();
+        //b
+        exampleMinBinarySearchTreeQueue();
+        //d
+        exampleMinBinarySearchTreeEfficientQueue();
+
+        // Part 2
+        exampleRopes();
     }
 }
