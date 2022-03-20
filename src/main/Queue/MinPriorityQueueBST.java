@@ -4,7 +4,6 @@ public class MinPriorityQueueBST {
 
     private Node root;
     private int size = 0;
-    private Node smallestNode;
 
     public MinPriorityQueueBST() {
         root = null;
@@ -33,7 +32,6 @@ public class MinPriorityQueueBST {
     private void insert(Node node, int value){
         if (root == null){
             root = new Node(value);
-            smallestNode = root;
             return;
         }
         if(node.key > value){
@@ -41,9 +39,6 @@ public class MinPriorityQueueBST {
                 Node newNode = new Node(value, node);
                 node.left = newNode;
                 // check if new node is the smallest node, if so, update smallest node
-                if (newNode.key < smallestNode.key){
-                    smallestNode = newNode;
-                }
                 return;
             }
             insert(node.left, value);
