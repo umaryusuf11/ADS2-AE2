@@ -50,15 +50,6 @@ public class MinPriorityQueueHeap {
         return min;
     }
 
-    public void doubleCapacity(){
-        // create new array with doubled capacity
-        int[] newArray = new int[capacity * 2];
-        // copy all elements from A to new array
-        if (capacity >= 0) System.arraycopy(A, 0, newArray, 0, capacity);
-        // set A to new array
-        A = newArray;
-    }
-
     public void buildHeap(){
         int n = size;
         for (int i = (n/2) - 1; i >= 0 ; i--) {
@@ -94,6 +85,17 @@ public class MinPriorityQueueHeap {
         int temp = A[i];
         A[i] = A[j];
         A[j] = temp;
+    }
+    public void doubleCapacity(){
+        // create new array with doubled capacity
+        int[] newArray = new int[capacity * 2];
+        // copy all elements from A to new array
+        for (int i = 0; i < capacity; i++) {
+            newArray[i] = A[i];
+        }
+        capacity = capacity * 2;
+        // set A to new array
+        A = newArray;
     }
 
     public String toString() {
